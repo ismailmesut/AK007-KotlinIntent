@@ -13,5 +13,10 @@ class NextActivity : AppCompatActivity() {
         val view = bindingNextActivity.root
         setContentView(view)
 
+        val intentFromMain = intent  //getIntent()
+        val name = intentFromMain.getStringExtra("name")
+        val myInteger = intentFromMain.getIntExtra("myInteger", 10)
+        println(myInteger)
+        bindingNextActivity.nameText.text = "Name : ${name}"
     }
 }
