@@ -15,8 +15,37 @@ class MainActivity : AppCompatActivity() {
         val view = bindingMainActivity.root
         setContentView(view)
 
-        ::test2
+        println("onCreate executed")
     }
+
+    override fun onStart() {
+        super.onStart()
+        println("onStart executed")
+        //bindingMainActivity.editText.setText("")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        println("onResume executed")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        println("onPause executed")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        println("onStop executed")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        println("onDestroy executed")
+    }
+
+
+
 
     fun test() {
 
@@ -30,5 +59,6 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("name", bindingMainActivity.editText.text.toString())
         intent.putExtra("myinteger", 10)
         startActivity(intent)
+        finish()
     }
 }
